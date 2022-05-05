@@ -8,6 +8,8 @@ import sys
 
 if __name__ == "__main__":
 
+    verbose = False
+
     dds = ddf_locations()
     mjd0 = 60218.
     delta_t = 15./60./24.  # to days
@@ -45,10 +47,11 @@ if __name__ == "__main__":
 
     maxi = mjds.size
     for i, mjd in enumerate(mjds):
-        progress = i/maxi*100
-        text = "\rprogress = %0.1f%%" % progress
-        sys.stdout.write(text)
-        sys.stdout.flush()
+        if verbose:
+            progress = i/maxi*100
+            text = "\rprogress = %0.1f%%" % progress
+            sys.stdout.write(text)
+            sys.stdout.flush()
 
         sm.setRaDecMjd(ras, decs, mjd, degrees=False)
         if sm.sunAlt > sun_limit:
