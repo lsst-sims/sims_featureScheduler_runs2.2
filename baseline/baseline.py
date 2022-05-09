@@ -25,7 +25,7 @@ def gen_greedy_surveys(nside=32, nexp=2, exptime=30., filters=['r', 'i', 'z', 'y
                        camera_rot_limits=[-80., 80.],
                        shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs='DD',
                        m5_weight=3., footprint_weight=0.75, slewtime_weight=3.,
-                       stayfilter_weight=3., footprints=None):
+                       stayfilter_weight=3., repeat_weight=-1., footprints=None):
     """
     Make a quick set of greedy surveys
 
@@ -81,6 +81,8 @@ def gen_greedy_surveys(nside=32, nexp=2, exptime=30., filters=['r', 'i', 'z', 'y
                                                 out_of_bounds_val=np.nan, nside=nside), footprint_weight))
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+                                                   nside=nside, npairs=20), repeat_weight))
         # Masks, give these 0 weight
         bfs.append((bf.Zenith_shadow_mask_basis_function(nside=nside, shadow_minutes=shadow_minutes,
                                                          max_alt=max_alt), 0))
@@ -106,7 +108,7 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                    m5_weight=6., footprint_weight=1.5, slewtime_weight=3.,
                    stayfilter_weight=3., template_weight=12., footprints=None, u_nexp1=True,
                    scheduled_respect=45., good_seeing={'g': 3, 'r': 3, 'i': 3}, good_seeing_weight=3.,
-                   mjd_start=1):
+                   mjd_start=1, repeat_weight=-1):
     """
     Generate surveys that take observations in blobs.
 
@@ -198,6 +200,8 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
 
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+                                                   nside=nside, npairs=20), repeat_weight))
 
         if filtername2 is not None:
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername, nside=nside,
@@ -276,7 +280,7 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
                        shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs='DD',
                        m5_weight=6., footprint_weight=1.5, slewtime_weight=3.,
                        stayfilter_weight=3., template_weight=12., footprints=None, repeat_night_weight=None,
-                       wfd_footprint=None, scheduled_respect=15.):
+                       wfd_footprint=None, scheduled_respect=15., repeat_weight=-1.):
     """
     Generate surveys that take observations in blobs.
 
@@ -364,6 +368,8 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
 
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+                                                   nside=nside, npairs=20), repeat_weight))
 
         if filtername2 is not None:
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername, nside=nside,
