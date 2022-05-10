@@ -19,16 +19,31 @@ from make_ddf_survey import generate_ddf_scheduled_obs
 from astropy.coordinates import SkyCoord
 from astropy import units as u
 from rubin_sim.utils import _hpid2RaDec
+from rubin_sim.scheduler.basis_functions import Base_basis_function
 # So things don't fail on hyak
 from astropy.utils import iers
 iers.conf.auto_download = False
+
+
+class Sun_alt_high_limit_basis_function(Base_basis_function):
+    """Don't try unless the sun is below some limit"""
+
+    def __init__(self, alt_limit=-15.):
+        super(Sun_alt_high_limit_basis_function, self).__init__()
+        self.alt_limit = np.radians(alt_limit)
+
+    def check_feasibility(self, conditions):
+        result = True
+        if conditions.sunAlt < self.alt_limit:
+            result = False
+        return result
 
 
 def gen_greedy_surveys(nside=32, nexp=2, exptime=30., filters=['r', 'i', 'z', 'y'],
                        camera_rot_limits=[-80., 80.],
                        shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs=['DD', 'twilight_neo'],
                        m5_weight=3., footprint_weight=0.75, slewtime_weight=3.,
-                       stayfilter_weight=3., footprints=None):
+                       stayfilter_weight=3., repeat_weight=-1., footprints=None):
     """
     Make a quick set of greedy surveys
 
@@ -84,6 +99,8 @@ def gen_greedy_surveys(nside=32, nexp=2, exptime=30., filters=['r', 'i', 'z', 'y
                                                 out_of_bounds_val=np.nan, nside=nside), footprint_weight))
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+                                                   nside=nside, npairs=20), repeat_weight))
         # Masks, give these 0 weight
         bfs.append((bf.Zenith_shadow_mask_basis_function(nside=nside, shadow_minutes=shadow_minutes,
                                                          max_alt=max_alt), 0))
@@ -109,7 +126,7 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                    m5_weight=6., footprint_weight=1.5, slewtime_weight=3.,
                    stayfilter_weight=3., template_weight=12., footprints=None, u_nexp1=True,
                    scheduled_respect=45., good_seeing={'g': 3, 'r': 3, 'i': 3}, good_seeing_weight=3.,
-                   mjd_start=1):
+                   mjd_start=1, repeat_weight=-1):
     """
     Generate surveys that take observations in blobs.
 
@@ -165,7 +182,7 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                           'read_approx': 2., 'min_pair_time': 15., 'search_radius': 30.,
                           'alt_max': 85., 'az_range': 90., 'flush_time': 30.,
                           'smoothing_kernel': None, 'nside': nside, 'seed': 42, 'dither': True,
-                          'twilight_scale': True}
+                          'twilight_scale': False}
 
     surveys = []
 
@@ -201,6 +218,8 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
 
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+                                                   nside=nside, npairs=20), repeat_weight))
 
         if filtername2 is not None:
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername, nside=nside,
@@ -279,7 +298,8 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
                        shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs=['DD', 'twilight_neo'],
                        m5_weight=6., footprint_weight=1.5, slewtime_weight=3.,
                        stayfilter_weight=3., template_weight=12., footprints=None, repeat_night_weight=None,
-                       wfd_footprint=None, scheduled_respect=15., night_pattern=None):
+                       wfd_footprint=None, scheduled_respect=15., repeat_weight=-1.,
+                       night_pattern=None):
     """
     Generate surveys that take observations in blobs.
 
@@ -342,6 +362,7 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
                                                            max_rot=np.max(camera_rot_limits)))
         detailer_list.append(detailers.Rottep2Rotsp_desired_detailer())
         detailer_list.append(detailers.Close_alt_detailer())
+        detailer_list.append(detailers.Flush_for_sched_detailer())
         # List to hold tuples of (basis_function_object, weight)
         bfs = []
 
@@ -366,6 +387,8 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
 
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+                                                   nside=nside, npairs=20), repeat_weight))
 
         if filtername2 is not None:
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername, nside=nside,
@@ -453,7 +476,7 @@ def generate_twilight_neo(nside, night_pattern=None, nexp=1, exptime=15,
                           time_needed=10,
                           footprint_weight=0.1, slewtime_weight=3.,
                           stayfilter_weight=3., area_required=None,
-                          filters='riz', n_repeat=3):
+                          filters='riz', n_repeat=3, sun_alt_limit=-17.):
     # XXX finish eliminating magic numbers and document this one
     slew_estimate = 4.5
     survey_name = 'twilight_neo'
@@ -489,6 +512,8 @@ def generate_twilight_neo(nside, night_pattern=None, nexp=1, exptime=15,
         #bfs.append((bf.Sun_alt_limit_basis_function(alt_limit=-15), 0))
         #bfs.append((bf.Time_in_twilight_basis_function(time_needed=time_needed), 0))
         bfs.append((bf.Night_modulo_basis_function(pattern=night_pattern), 0))
+        # Do not attempt unless the sun is getting high
+        bfs.append(((Sun_alt_high_limit_basis_function(alt_limit=sun_alt_limit)), 0))
 
         # unpack the basis functions and weights
         weights = [val[1] for val in bfs]
