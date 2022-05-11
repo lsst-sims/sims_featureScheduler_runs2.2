@@ -56,7 +56,7 @@ cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/baseline
 module load parallel-20170722
 
 # python generate_grid.py
-# python baseline.py
+python baseline.py
 generate_ss 
 cat ss_script.sh > maf.sh
 generate_ss --pop vatiras_granvik_10k
