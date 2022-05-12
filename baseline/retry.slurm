@@ -2,7 +2,7 @@
 
 ## Job Name
 
-#SBATCH --job-name=baseline2.2
+#SBATCH --job-name=retry_ss2.2
 
 ## Allocation Definition
 
@@ -58,4 +58,4 @@ module load parallel-20170722
 # python generate_grid.py
 generate_ss 
 
-cat second_half.sh | parallel -j 20
+cat second_half.sh | parallel -j 1
