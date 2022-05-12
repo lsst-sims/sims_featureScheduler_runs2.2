@@ -58,4 +58,4 @@ module load parallel-20170722
 # python generate_grid.py
 generate_ss 
 
-cat second_half.sh | parallel -j 1
+cat second_half.sh | parallel -j 20
