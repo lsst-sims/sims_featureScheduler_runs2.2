@@ -14,7 +14,7 @@
 
 ## Nodes
 
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
@@ -66,4 +66,4 @@ ls *10yrs.db | xargs -I'{}' echo glance_dir --db '{}' > maf.sh
 ls *10yrs.db | xargs -I'{}' echo scimaf_dir --db '{}' >> maf.sh
 ls *10yrs.db | xargs -I'{}' echo ddf_dir --db '{}' >> maf.sh
 
-cat maf.sh | parallel -j 28
+cat maf.sh | parallel -j 56
