@@ -62,7 +62,7 @@ def match_cumulative(cumulative_desired, mask=None, no_duplicate=True):
 
 def optimize_ddf_times(ddf_name, ddf_RA, ddf_grid,
                        sun_limit=-18, airmass_limit=2.5, sky_limit=None,
-                       g_depth_limit=23.5, sequence_limit=286, season_frac=0.1):
+                       g_depth_limit=23.5, sequence_limit=258, season_frac=0.1):
     """Run gyrobi to optimize the times of a ddf
 
     Parameters
