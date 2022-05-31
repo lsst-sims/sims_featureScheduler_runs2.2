@@ -1,0 +1,1 @@
+Let's run just a single DDF and see if the total number of observations changes much when we change the season length.
