@@ -145,8 +145,8 @@ def generate_ddf_scheduled_obs(data_file='ddf_grid.npz', flush_length=2, mjd_tol
                                alt_min=25, alt_max=85, HA_min=21., HA_max=3.,
                                dist_tol=3., season_frac=0.1,
                                low_season_frac=0.4, low_season_rate=0.3,
-                               nvis_master=[8, 20, 10, 20, 26, 20],
-                               nsnaps=[1, 2, 2, 2, 2, 2], sequence_limit=286):
+                               nvis_master=[8, 10, 20, 20, 26, 20], filters='ugrizy',
+                               nsnaps=[1, 2, 2, 2, 2, 2], sequence_limit=258):
 
     flush_length = flush_length  # days
     mjd_tol = mjd_tol/60/24.  # minutes to days
@@ -158,9 +158,6 @@ def generate_ddf_scheduled_obs(data_file='ddf_grid.npz', flush_length=2, mjd_tol
     ddfs = ddf_locations()
     ddf_data = np.load(data_file)
     ddf_grid = ddf_data['ddf_grid'].copy()
-
-    # number of visits for each filter
-    filters = 'ugrizy'
     
     all_scheduled_obs = []
     for ddf_name in ['ELAISS1', 'XMM_LSS', 'ECDFS', 'COSMOS', 'EDFS_a']:
