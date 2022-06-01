@@ -232,6 +232,7 @@ def generate_ddf_scheduled_obs(data_file='ddf_grid.npz', flush_length=2, mjd_tol
                     all_scheduled_obs.append(obs)
 
     result = np.concatenate(all_scheduled_obs)
+    result['scripted_id'] = np.arange(result.size)
     return result
 
 
