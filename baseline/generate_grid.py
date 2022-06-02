@@ -5,10 +5,14 @@ import rubin_sim.skybrightness as sb
 from rubin_sim.utils import m5_flat_sed
 from rubin_sim.site_models.seeingModel import SeeingModel
 import sys
+from astroplan import Observer
+import astropy.units as u
+from astropy.time import Time
+from rubin_sim.utils import Site
 
 if __name__ == "__main__":
 
-    verbose = False
+    verbose = True
 
     dds = ddf_locations()
     mjd0 = 60218.
@@ -20,13 +24,21 @@ if __name__ == "__main__":
 
     filtername = 'g'
 
+    site = Site("LSST")
+    observer = Observer(
+        longitude=site.longitude * u.deg,
+        latitude=site.latitude * u.deg,
+        elevation=site.height * u.m,
+        name="LSST",
+    )
+
     seeing_model = SeeingModel()
 
     seeing_indx = 1  # 0=u, 1=g, 2=r, etc.
 
     mjds = np.arange(mjd0, mjd0+survey_length, delta_t)
 
-    names = ['mjd', 'sun_alt']
+    names = ['mjd', 'sun_alt', 'sun_n18_rising_next']
     for survey_name in dds.keys():
         names.append(survey_name+'_airmass')
         names.append(survey_name+'_sky_g')
@@ -61,10 +73,13 @@ if __name__ == "__main__":
             mags.append(sm.returnMags()['g'])
             airmasses.append(sm.airmass)
         sun_alts.append(sm.sunAlt)
+        result["sun_n18_rising_next"][i] = observer.twilight_morning_astronomical(
+                                           Time(mjd, format='mjd'), which="next").mjd
 
     mags = np.array(mags)
     airmasses = np.array(airmasses)
     result['sun_alt'] = sun_alts
+
     for i, survey_name in enumerate(dds.keys()):
         result[survey_name+'_airmass'] = airmasses[:, i]
         result[survey_name+'_sky_g'] = mags[:, i]
