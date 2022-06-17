@@ -9,3 +9,9 @@ Should the other surveys ignore the twilight or respect them (and count them as 
 * Currently they are ignoring.
 
 Added a basis function so the twilight neo won't start observations unless the sun is higher than -17 degrees. Could try varying this limit if we wanted to. 
+
+
+--------
+
+Adding twi_neo_brightest and setting the twilight NEO time to only execute when sun is higher than -14.5 degrees.
+

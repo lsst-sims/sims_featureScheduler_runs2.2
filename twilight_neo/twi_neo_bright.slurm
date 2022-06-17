@@ -2,7 +2,7 @@
 
 ## Job Name
 
-#SBATCH --job-name=carina2.2
+#SBATCH --job-name=twi_neo_bright2.2
 
 ## Allocation Definition
 
@@ -15,11 +15,11 @@
 ## Nodes
 
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=20
+#SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=15:00:00
+#SBATCH --time=48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
@@ -33,7 +33,7 @@
 
 ## Specify the working directory for this job
 
-#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/carina
+#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/twilight_neo
 
 ##turn on e-mail notification
 
@@ -50,16 +50,25 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate guro
 export OPENBLAS_NUM_THREADS=1
 
-cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/carina
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/twilight_neo
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-# python generate_grid.py
-python carina.py
+python generate_neos_bright.py > neos.sh
 
-echo scimaf_dir > maf.sh
-echo glance_dir >> maf.sh
-echo ddf_dir >> maf.sh
+cat neos.sh | parallel -j 28
 
-cat maf.sh | parallel -j 20
+generate_ss 
+cat ss_script.sh > maf.sh
+generate_ss --pop vatiras_granvik_10k
+cat ss_script.sh >> maf.sh
+
+ls *10yrs.db | xargs -I'{}' echo glance_dir --db '{}' >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo scimaf_dir --db '{}' >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo ddf_dir --db '{}' >> maf.sh
+
+# Pull out the bright ones
+grep bright maf.sh > maf.sh
+
+cat maf.sh | parallel -j 28
