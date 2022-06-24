@@ -14,12 +14,12 @@
 
 ## Nodes
 
-#SBATCH --nodes=2
+#SBATCH --nodes=3
 #SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=48:00:00
+#SBATCH --time=3-48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
@@ -70,4 +70,4 @@ ls *10yrs.db | xargs -I'{}' echo ddf_dir --db '{}' >> maf.sh
 
 
 
-cat maf.sh | parallel -j 56
+cat maf.sh | parallel -j 84
