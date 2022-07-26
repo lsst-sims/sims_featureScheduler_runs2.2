@@ -15,7 +15,7 @@ import sys
 import subprocess
 import os
 import argparse
-from make_ddf_survey import generate_ddf_scheduled_obs
+from make_rolling_ddf_survey import generate_ddf_scheduled_obs
 # So things don't fail on hyak
 from astropy.utils import iers
 iers.conf.auto_download = False
@@ -426,7 +426,7 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
 
 
 def ddf_surveys(detailers=None, season_frac=0.2):
-    obs_array = generate_ddf_scheduled_obs(season_frac=season_frac)
+    obs_array = generate_ddf_scheduled_obs(season_frac=season_frac, nvis_master=None)
     survey = Scripted_survey([], detailers=detailers)
     survey.set_script(obs_array)
     return [survey]
@@ -499,7 +499,7 @@ if __name__ == "__main__":
         fileroot = os.path.basename(sys.argv[0]).replace('.py', '') + '_'
     else:
         fileroot = dbroot + '_'
-    file_end = '%.1f_v2.2_' % ddf_season_frac
+    file_end = 'slf%.2f_v2.2_' % ddf_season_frac
 
     sm = Sky_area_generator(nside=nside)
 
