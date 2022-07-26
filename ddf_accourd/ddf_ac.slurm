@@ -2,7 +2,7 @@
 
 ## Job Name
 
-#SBATCH --job-name=baseline2.2
+#SBATCH --job-name=ddf_ac.2
 
 ## Allocation Definition
 
@@ -33,7 +33,7 @@
 
 ## Specify the working directory for this job
 
-#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/baseline
+#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd
 
 ##turn on e-mail notification
 
@@ -50,19 +50,9 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate guro
 export OPENBLAS_NUM_THREADS=1
 
-cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/baseline
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-# python generate_grid.py
-python baseline.py
-generate_ss 
-cat ss_script.sh > maf.sh
-generate_ss --pop vatiras_granvik_10k
-cat ss_script.sh >> maf.sh
-echo scimaf_dir >> maf.sh
-echo glance_dir >> maf.sh
-echo ddf_dir >> maf.sh
-
-cat maf.sh | parallel -j 20
+cat ddf_ac.sh | parallel -j 28
