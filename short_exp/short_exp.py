@@ -105,7 +105,7 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                    nshort=3, short_time=5., short_night_max=365.,
                    camera_rot_limits=[-80., 80.], n_obs_template=3,
                    season=300., season_start_hour=-4., season_end_hour=2.,
-                   shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs=['DD', 'short'],
+                   shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs=['DD'],
                    m5_weight=6., footprint_weight=1.5, slewtime_weight=3.,
                    stayfilter_weight=3., template_weight=12., footprints=None, u_nexp1=True,
                    scheduled_respect=45., good_seeing={'g': 3, 'r': 3, 'i': 3}, good_seeing_weight=3.,
