@@ -16,6 +16,7 @@ import subprocess
 import os
 import argparse
 from make_ddf_survey import generate_ddf_scheduled_obs
+import rubin_sim
 # So things don't fail on hyak
 from astropy.utils import iers
 iers.conf.auto_download = False
@@ -493,6 +494,12 @@ if __name__ == "__main__":
         extra_info['git hash'] = 'Not in git repo'
 
     extra_info['file executed'] = os.path.realpath(__file__)
+    try:
+        rs_path = rubin_sim.__path__[0]
+        hash_file = os.path.join(rs_path, '../', '.git/refs/heads/main')
+        extra_info['rubin_sim git hash'] = subprocess.check_output(['cat', hash_file])
+    except subprocess.CalledProcessError:
+        pass
 
     # Use the filename of the script to name the output database
     if dbroot is None:
