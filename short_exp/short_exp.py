@@ -263,15 +263,19 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
         if filtername2 is not None:
             detailer_list.append(detailers.Take_as_pairs_detailer(filtername=filtername2))
 
+        # Don't space out u-band observations since they get bunched up due to moon.
+        time_scale_dict = {'u': False, 'g': True, 'r': True, 'i': True, 'z': True, 'y': True}
         # add on a detailer to take short exposures if needed
         detailer_list.append(detailers.Short_expt_detailer(filtername=filtername, nside=nside,
                                                            nobs=nshort, exp_time=short_time,
                                                            night_max=short_night_max,
+                                                           time_scale=time_scale_dict[filtername],
                                                            footprint=footprints.get_footprint(filtername)))
         if (filtername2 is not None) & (filtername2 != filtername):
             detailer_list.append(detailers.Short_expt_detailer(filtername=filtername2, nside=nside,
                                                                nobs=nshort, exp_time=short_time,
                                                                night_max=short_night_max,
+                                                               time_scale=time_scale_dict[filtername],
                                                                footprint=footprints.get_footprint(filtername)))
 
         if u_nexp1:
