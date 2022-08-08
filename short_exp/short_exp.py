@@ -102,7 +102,7 @@ def gen_greedy_surveys(nside=32, nexp=2, exptime=30., filters=['r', 'i', 'z', 'y
 
 def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i', 'z', 'y'],
                    filter2s=['g', 'r', 'r', 'i', 'z', 'y', 'y'], pair_time=33.,
-                   nshort=3, short_time=5., short_night_max=365.,
+                   nshort=3, short_time=5.,
                    camera_rot_limits=[-80., 80.], n_obs_template=3,
                    season=300., season_start_hour=-4., season_end_hour=2.,
                    shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs=['DD'],
@@ -265,16 +265,17 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
 
         # Don't space out u-band observations since they get bunched up due to moon.
         time_scale_dict = {'u': False, 'g': True, 'r': True, 'i': True, 'z': True, 'y': True}
+        night_maxes = {'u': 365*2, 'g': 365, 'r': 365, 'i': 365, 'z': 365, 'y': 365}
         # add on a detailer to take short exposures if needed
         detailer_list.append(detailers.Short_expt_detailer(filtername=filtername, nside=nside,
                                                            nobs=nshort, exp_time=short_time,
-                                                           night_max=short_night_max,
+                                                           night_max=night_maxes[filtername],
                                                            time_scale=time_scale_dict[filtername],
                                                            footprint=footprints.get_footprint(filtername)))
         if (filtername2 is not None) & (filtername2 != filtername):
             detailer_list.append(detailers.Short_expt_detailer(filtername=filtername2, nside=nside,
                                                                nobs=nshort, exp_time=short_time,
-                                                               night_max=short_night_max,
+                                                               night_max=night_maxes[filtername],
                                                                time_scale=time_scale_dict[filtername],
                                                                footprint=footprints.get_footprint(filtername)))
 
