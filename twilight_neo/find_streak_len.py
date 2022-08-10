@@ -147,7 +147,7 @@ if __name__ == "__main__":
     obsid = args.obsid
     chunk_size = args.chunk_size
 
-    filename = datalocation.replace(".db", "") + ".npz"
+    filename = datalocation.replace(".db", "") + args.constellation_name + ".npz"
 
     obs_array = compute_streak_len(
         datalocation,
