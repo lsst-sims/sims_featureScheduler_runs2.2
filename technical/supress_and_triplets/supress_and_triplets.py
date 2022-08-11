@@ -19,6 +19,8 @@ from make_ddf_survey import generate_ddf_scheduled_obs
 import rubin_sim
 # So things don't fail on hyak
 from astropy.utils import iers
+from gen_long_gaps import gen_long_gaps_survey
+
 iers.conf.auto_download = False
 
 
@@ -82,7 +84,7 @@ def gen_greedy_surveys(nside=32, nexp=2, exptime=30., filters=['r', 'i', 'z', 'y
                                                 out_of_bounds_val=np.nan, nside=nside), footprint_weight))
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
-        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=2*60., filtername=None,
                                                    nside=nside, npairs=20), repeat_weight))
         # Masks, give these 0 weight
         bfs.append((bf.Zenith_shadow_mask_basis_function(nside=nside, shadow_minutes=shadow_minutes,
@@ -201,7 +203,7 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
 
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
-        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=2*60., filtername=None,
                                                    nside=nside, npairs=20), repeat_weight))
 
         if filtername2 is not None:
@@ -369,7 +371,7 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
 
         bfs.append((bf.Slewtime_basis_function(filtername=filtername, nside=nside), slewtime_weight))
         bfs.append((bf.Strict_filter_basis_function(filtername=filtername), stayfilter_weight))
-        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=18*60., filtername=None,
+        bfs.append((bf.Visit_repeat_basis_function(gap_min=0, gap_max=2*60., filtername=None,
                                                    nside=nside, npairs=20), repeat_weight))
 
         if filtername2 is not None:
@@ -463,6 +465,8 @@ if __name__ == "__main__":
     parser.add_argument("--dbroot", type=str)
     parser.add_argument("--gsw", type=float, default=3.0)
     parser.add_argument("--ddf_season_frac", type=float, default=0.2)
+    parser.add_argument("--nights_off", type=int, default=6)
+    parser.add_argument("--nights_delayed", type=int, default=-1)
 
     args = parser.parse_args()
     survey_length = args.survey_length  # Days
@@ -475,6 +479,8 @@ if __name__ == "__main__":
     scale = args.rolling_strength
     dbroot = args.dbroot
     gsw = args.gsw
+    nights_off = args.nights_off
+    nights_delayed = args.nights_delayed
 
     ddf_season_frac = args.ddf_season_frac
 
@@ -539,12 +545,17 @@ if __name__ == "__main__":
 
     greedy = gen_greedy_surveys(nside, nexp=nexp, footprints=footprints)
 
+    night_pattern = [True] + [False]*nights_off
+
+    long_gaps = gen_long_gaps_survey(nside=nside, footprints=footprints,
+                                     night_pattern=night_pattern, nights_delayed=nights_delayed)
+
     blobs = generate_blobs(nside, nexp=nexp, footprints=footprints, mjd_start=conditions.mjd_start, good_seeing_weight=gsw)
     twi_blobs = generate_twi_blobs(nside, nexp=nexp,
                                    footprints=footprints,
                                    wfd_footprint=wfd_footprint,
                                    repeat_night_weight=repeat_night_weight)
-    surveys = [ddfs, blobs, twi_blobs, greedy]
+    surveys = [ddfs, long_gaps, blobs, twi_blobs, greedy]
     run_sched(surveys, survey_length=survey_length, verbose=verbose,
               fileroot=os.path.join(outDir, fileroot+file_end), extra_info=extra_info,
               nside=nside, illum_limit=illum_limit)
