@@ -427,9 +427,17 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
 
 def ddf_surveys(detailers=None, season_frac=0.2):
     obs_array = generate_ddf_scheduled_obs(season_frac=season_frac)
-    survey = Scripted_survey([], detailers=detailers)
-    survey.set_script(obs_array)
-    return [survey]
+
+    euclid_obs = np.where((obs_array['note'] == 'DD:EDFS_b') | (obs_array['note'] == 'DD:EDFS_a'))[0]
+    all_other = np.where((obs_array['note'] != 'DD:EDFS_b') & (obs_array['note'] != 'DD:EDFS_a'))[0]
+
+    survey1 = Scripted_survey([], detailers=detailers)
+    survey1.set_script(obs_array[all_other])
+
+    survey2 = Scripted_survey([], detailers=euclid_detailers)
+    survey2.set_script(obs_array[euclid_obs])
+
+    return [survey1, survey2]
 
 
 def run_sched(surveys, survey_length=365.25, nside=32, fileroot='baseline_', verbose=False,
@@ -531,8 +539,8 @@ if __name__ == "__main__":
     details = [detailers.Camera_rot_detailer(min_rot=-camera_ddf_rot_limit, max_rot=camera_ddf_rot_limit),
                dither_detailer, u_detailer, detailers.Rottep2Rotsp_desired_detailer()]
     euclid_detailers = [detailers.Camera_rot_detailer(min_rot=-camera_ddf_rot_limit, max_rot=camera_ddf_rot_limit),
-                        detailers.Euclid_dither_detailer(), u_detailer]
-    ddfs = ddf_surveys(detailers=details, season_frac=ddf_season_frac)
+                        detailers.Euclid_dither_detailer(), u_detailer, detailers.Rottep2Rotsp_desired_detailer()]
+    ddfs = ddf_surveys(detailers=details, season_frac=ddf_season_frac, euclid_detailers=euclid_detailers)
 
     greedy = gen_greedy_surveys(nside, nexp=nexp, footprints=footprints)
 
