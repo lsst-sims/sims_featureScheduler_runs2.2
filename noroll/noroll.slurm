@@ -2,7 +2,7 @@
 
 ## Job Name
 
-#SBATCH --job-name=baseline2.2
+#SBATCH --job-name=noroll.2
 
 ## Allocation Definition
 
