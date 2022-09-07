@@ -62,4 +62,4 @@ echo scimaf_dir > maf.sh
 echo glance_dir >> maf.sh
 echo ddf_dir >> maf.sh
 
-cat maf.sh | parallel -j 20
+#cat maf.sh | parallel -j 20

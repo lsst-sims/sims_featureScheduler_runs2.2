@@ -57,4 +57,4 @@ module load parallel-20170722
 
 # python generate_grid.py
 python short_exp.py
-glance_dir 
+#glance_dir 
