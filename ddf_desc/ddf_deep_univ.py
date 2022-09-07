@@ -425,7 +425,7 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
     return surveys
 
 
-def ddf_surveys(detailers=None, season_frac=0.2):
+def ddf_surveys(detailers=None, season_frac=0.2, euclid_detailers=None):
     obs_array = generate_ddf_scheduled_obs(nvis_master=[2, 2, 9, 10, 15, 3],
                                            sequence_limit=286*4, season_frac=season_frac)
 
