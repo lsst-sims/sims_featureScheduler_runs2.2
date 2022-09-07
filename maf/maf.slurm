@@ -14,12 +14,12 @@
 
 ## Nodes
 
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=48:00:00
+#SBATCH --time=2-48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
@@ -52,7 +52,19 @@ export OPENBLAS_NUM_THREADS=1
 
 cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf
 
+# sym-link in all the relevant dbs
+find ../ -type f \( -iname "*10yrs.db" ! -path "*technical*" \) | xargs -I'{}' ln -s '{}' .
+
+# run the solar system etc
+generate_ss
+cat ss_script.sh > maf.sh
+generate_ss --pop vatiras_granvik_10k
+cat ss_script.sh >> maf.sh
+echo scimaf_dir > maf.sh
+echo glance_dir >> maf.sh
+echo ddf_dir >> maf.sh
+
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat maf.sh | parallel -j 28
+cat maf.sh | parallel -j 56
