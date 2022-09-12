@@ -14,12 +14,12 @@
 
 ## Nodes
 
-#SBATCH --nodes=4
+#SBATCH --nodes=6
 #SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=2-48:00:00
+#SBATCH --time=4-48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
@@ -67,4 +67,4 @@ echo ddf_dir >> maf.sh
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat maf.sh | parallel -j 112
+cat maf.sh | parallel -j 168
