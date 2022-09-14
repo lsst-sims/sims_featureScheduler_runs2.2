@@ -21,6 +21,6 @@ conda activate rubin
 export OPENBLAS_NUM_THREADS=1
 
 
-parallel:: 'python galplane_priority.py --agg_level 1.5' 'python galplane_priority.py --agg_level 2.0'
+parallel ::: 'python galplane_priority.py --agg_level 1.5' 'python galplane_priority.py --agg_level 2.0'
 
 parallel ::: scimaf_dir metadata_dir ddf_dir glance_dir
