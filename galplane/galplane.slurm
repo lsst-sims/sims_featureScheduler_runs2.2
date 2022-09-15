@@ -1,26 +1,59 @@
 #!/bin/bash
+
+## Job Name
+
+#SBATCH --job-name=galplane2.2
+
+## Allocation Definition
+
+## On mox and ikt, the account and partition options should be the same.
 #SBATCH --account=astro
 #SBATCH --partition=astro
-#SBATCH --job-name=galplane
-#SBATCH --chdir=/gscratch/scrubbed/lynnej/galplane/sims_featureScheduler_runs2.2/galplane
+
+## Resources
+
+## Nodes
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
-#SBATCH --time=36:00:00
+
+## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
+
+#SBATCH --time=48:00:00
+
+## Memory per node. It is important to specify the memory since the default memory is very small.
+
+## For mox, --mem may be more than 100G depending on the memory of your nodes.
+
+## For ikt, --mem may be 58G or more depending on the memory of your nodes.
+
+## See above section on "Specifying memory" for choices for --mem.
+
 #SBATCH --mem=500G
+
+## Specify the working directory for this job
+
+#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/galplane
+
+##turn on e-mail notification
+
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=lynnej@uw.edu
+
+#SBATCH --mail-user=yoachim@uw.edu
+
+## export all your environment variables to the batch job session
+
 #SBATCH --export=all
 
-source ~/loadmods
-
-source ~/gg/miniconda3/etc/profile.d/conda.sh
-export RUBIN_SIM_DATA_DIR='/gscratch/astro/lynnej/rubin_sim_data'
-conda activate rubin
-
+## Set up the evironment
+source ~/anaconda3/etc/profile.d/conda.sh
+conda activate guro
 export OPENBLAS_NUM_THREADS=1
 
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/galplane
 
-parallel ::: 'python galplane_priority.py --agg_level 1.5' 'python galplane_priority.py --agg_level 2.0'
+## run all the baseline commands in parallel
+module load parallel-20170722
 
-parallel ::: scimaf_dir metadata_dir ddf_dir glance_dir
+# python generate_grid.py
+cat galplane.sh | parallel -j 28 
