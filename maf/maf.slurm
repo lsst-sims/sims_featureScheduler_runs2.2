@@ -60,9 +60,9 @@ generate_ss
 cat ss_script.sh > maf.sh
 generate_ss --pop vatiras_granvik_10k
 cat ss_script.sh >> maf.sh
-echo scimaf_dir >> maf.sh
-echo glance_dir >> maf.sh
-echo ddf_dir >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "ddf_dir --db '{}'" >> maf.sh
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
