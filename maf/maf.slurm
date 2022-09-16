@@ -56,10 +56,12 @@ cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf
 find ../ -type f \( -iname "*10yrs.db" ! -path "*technical*" \) | xargs -I'{}' ln -s '{}' .
 
 # run the solar system etc
-generate_ss
-cat ss_script.sh > maf.sh
-generate_ss --pop vatiras_granvik_10k
-cat ss_script.sh >> maf.sh
+#generate_ss
+#cat ss_script.sh > maf.sh
+#generate_ss --pop vatiras_granvik_10k
+#cat ss_script.sh >> maf.sh
+rm maf.sh
+touch mah.sh
 ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" >> maf.sh
 ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" >> maf.sh
 ls *10yrs.db | xargs -I'{}' echo "ddf_dir --db '{}'" >> maf.sh
