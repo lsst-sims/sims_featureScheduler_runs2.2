@@ -964,8 +964,8 @@ if __name__ == "__main__":
     file_end = "v2.2_"
 
     # Modify the footprint
-    gp_map = gf.read_galplane_footprint(args.agg_level)
-    footprints_hp_array, labels = gf.return_maps_galplane_sky(nside, gp_map)
+    sky = gf.Sky_area_generator_galplane(nside=nside, smc_radius=4, lmc_radius=6)
+    footprints_hp_array, labels = sky.return_maps(args.agg_level)
 
     wfd_indx = np.where(
         (labels == "lowdust") | (labels == "LMC_SMC") | (labels == "virgo")
