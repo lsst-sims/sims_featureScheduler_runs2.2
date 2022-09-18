@@ -9,7 +9,7 @@ from rubin_sim.scheduler.utils import Sky_area_generator
 # maps, labels = sky.return_maps(aggregation_level)
 
 class Sky_area_generator_galplane(Sky_area_generator):
-    def read_galplane_footprint(self, aggregation_level, rootDir="."):
+    def read_galplane_footprint(self, aggregation_level, root_dir="."):
         #  https://github.com/LSST-TVSSC/software_tools is original source for the files here
         # specifically, tvs_software_tools/GalPlaneSurvey/HighCadenceZone
         if isinstance(aggregation_level, float):
@@ -23,7 +23,7 @@ class Sky_area_generator_galplane(Sky_area_generator):
                 f"Looking for either 1.5 or 2.0 (str) for aggregation_level, "
                 f"not {aggregation_level}"
             )
-        with fits.open(os.path.join(rootdir, filename)) as hdu1:
+        with fits.open(os.path.join(root_dir, filename)) as hdu1:
             self.gp = hdu1[1].data["pixelPriority"]
         # Turn gp map into mask for locations of high priority fields, and resample
         self.gp_mask = np.where(self.gp > 0, 1, 0)
@@ -48,7 +48,6 @@ class Sky_area_generator_galplane(Sky_area_generator):
         bulge_ratios={'u': 0.56, 'g': 0.83, 'r': 0.95, 'i': 0.9, 'z': 0.71, 'y': 0.56},
         virgo_ratios={"u": 0.32, "g": 0.4, "r": 1.0, "i": 1.0, "z": 0.9, "y": 0.9},
     ):
-
 
         self.pix_labels = np.zeros(hp.nside2npix(self.nside), dtype="U20")
         self.healmaps = np.zeros(
