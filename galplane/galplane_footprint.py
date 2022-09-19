@@ -25,14 +25,14 @@ class Sky_area_generator_galplane(Sky_area_generator):
             )
         with fits.open(os.path.join(root_dir, filename)) as hdu1:
             self.gp = hdu1[1].data["pixelPriority"]
-        # Turn gp map into mask for locations of high priority fields, and resample
+        # Turn gp map into mask for locations of high priority fields and resample
         self.gp_mask = np.where(self.gp > 0, 1, 0)
         self.gp_mask = hp.ud_grade(self.gp_mask, self.nside)
 
     def return_maps(
         self,
         aggregation_level,
-        rootDir = ".",
+        root_dir = ".",
         magellenic_clouds_ratios={
             "u": 0.32,
             "g": 0.4,
@@ -61,7 +61,7 @@ class Sky_area_generator_galplane(Sky_area_generator):
         self.add_virgo_cluster(virgo_ratios)
 
         # Add galplane high priority regions
-        self.read_galplane_footprint(aggregation_level, rootDir)
+        self.read_galplane_footprint(aggregation_level, root_dir)
         label = "bulge"
         indx = np.where((self.gp_mask > 0) & (self.pix_labels == ""))
         self.pix_labels[indx] = label
