@@ -63,7 +63,7 @@ def make_rolling_footprints(
 
     down = 1.0 - scale
     up = nslice - down * (nslice - 1)
-    start = [1.0, 1.0, 1.0]
+    start = [1.0, 1.0]
     end = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
     if nslice == 2:
         all_slopes = [
