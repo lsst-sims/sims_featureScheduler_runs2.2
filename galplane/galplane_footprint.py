@@ -31,7 +31,7 @@ class Sky_area_generator_galplane(Sky_area_generator):
 
     def return_maps(
         self,
-        aggregation_level,
+        aggregation_level=2.0,
         root_dir = ".",
         magellenic_clouds_ratios={
             "u": 0.32,
