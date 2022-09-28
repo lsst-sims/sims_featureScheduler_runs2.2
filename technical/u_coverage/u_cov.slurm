@@ -60,7 +60,8 @@ module load parallel-20170722
 # cat u_cov.sh | parallel -j 28
 
 rm maf.sh
-touch maf.sh
 # ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" >> maf.sh
-ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" >> maf.sh
+#ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "metadata_dir --db '{}'" >> maf.sh
+
 cat maf.sh | parallel -j 28
