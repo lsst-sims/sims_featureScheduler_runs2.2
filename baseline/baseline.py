@@ -107,7 +107,7 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                    season=300., season_start_hour=-4., season_end_hour=2.,
                    shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs='DD',
                    m5_weight=6., footprint_weight=1.5, slewtime_weight=3.,
-                   stayfilter_weight=3., template_weight=12., footprints=None, u_nexp1=True,
+                   stayfilter_weight=3., template_weight=12., u_template_weight=24., footprints=None, u_nexp1=True,
                    scheduled_respect=45., good_seeing={'g': 3, 'r': 3, 'i': 3}, good_seeing_weight=3.,
                    mjd_start=1, repeat_weight=-1):
     """
@@ -155,11 +155,19 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
         The weight on basis function that tries to stay avoid filter changes.
     template_weight : float (12.)
         The weight to place on getting image templates every season
+    u_template_weight : float (24.)
+        THe weight to place on getting image templates in u-band. Since there
+        are so few u-visits, it can be helpful to turn this up a little higher than
+        the standard template_weight kwarg.
     u_nexp1 : bool (True)
         Add a detailer to make sure the number of expossures in a visit is always 1 for u observations.
     scheduled_respect : float (45)
         How much time to require there be before a pre-scheduled observation (minutes)
     """
+
+    template_weights = {'u': u_template_weight, 'g': template_weight,
+                        'r': template_weight, 'i': template_weight,
+                        'z': template_weight, 'y': template_weight}
 
     blob_survey_params = {'slew_approx': 7.5, 'filter_change_approx': 140.,
                           'read_approx': 2., 'min_pair_time': 15., 'search_radius': 30.,
@@ -209,12 +217,12 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                                                          footprint=footprints.get_footprint(filtername),
                                                          n_obs=n_obs_template, season=season,
                                                          season_start_hour=season_start_hour,
-                                                         season_end_hour=season_end_hour), template_weight/2.))
+                                                         season_end_hour=season_end_hour), template_weights[filtername]/2.))
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername2, nside=nside,
                                                          footprint=footprints.get_footprint(filtername2),
                                                          n_obs=n_obs_template, season=season,
                                                          season_start_hour=season_start_hour,
-                                                         season_end_hour=season_end_hour), template_weight/2.))
+                                                         season_end_hour=season_end_hour), template_weights[filtername2]/2.))
         else:
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername, nside=nside,
                                                          footprint=footprints.get_footprint(filtername),

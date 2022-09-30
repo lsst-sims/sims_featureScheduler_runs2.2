@@ -161,9 +161,9 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
         How much time to require there be before a pre-scheduled observation (minutes)
     """
 
-    template_weights={'u': u_template_weight, 'g': template_weight,
-                       'r': template_weight, 'i': template_weight,
-                       'z': template_weight, 'y': template_weight}
+    template_weights = {'u': u_template_weight, 'g': template_weight,
+                        'r': template_weight, 'i': template_weight,
+                        'z': template_weight, 'y': template_weight}
 
     blob_survey_params = {'slew_approx': 7.5, 'filter_change_approx': 140.,
                           'read_approx': 2., 'min_pair_time': 15., 'search_radius': 30.,
