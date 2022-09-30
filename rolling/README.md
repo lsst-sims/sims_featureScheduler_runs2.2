@@ -1,0 +1,1 @@
+Rolling of 2 and 3 band with 0.5, 0.8, 0.9 weight.
