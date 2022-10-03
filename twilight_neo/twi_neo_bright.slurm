@@ -55,9 +55,9 @@ cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/twilight_neo
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-python generate_neos_bright.py > neos.sh
+python generate_neos_bright.py > neos_b.sh
 
-cat neos.sh | parallel -j 28
+cat neos_b.sh | parallel -j 28
 
 generate_ss 
 cat ss_script.sh > maf.sh
@@ -71,4 +71,4 @@ ls *10yrs.db | xargs -I'{}' echo ddf_dir --db '{}' >> maf.sh
 # Pull out the bright ones
 grep bright maf.sh > maf.sh
 
-cat maf.sh | parallel -j 28
+# cat maf.sh | parallel -j 28

@@ -216,12 +216,12 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                                                          footprint=footprints.get_footprint(filtername),
                                                          n_obs=n_obs_template, season=season,
                                                          season_start_hour=season_start_hour,
-                                                         season_end_hour=season_end_hour), template_weight/2.))
+                                                         season_end_hour=season_end_hour), template_weights[filtername]/2.))
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername2, nside=nside,
                                                          footprint=footprints.get_footprint(filtername2),
                                                          n_obs=n_obs_template, season=season,
                                                          season_start_hour=season_start_hour,
-                                                         season_end_hour=season_end_hour), template_weight/2.))
+                                                         season_end_hour=season_end_hour), template_weights[filtername2]/2.))
         else:
             bfs.append((bf.N_obs_per_year_basis_function(filtername=filtername, nside=nside,
                                                          footprint=footprints.get_footprint(filtername),
