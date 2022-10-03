@@ -2,7 +2,7 @@
 
 ## Job Name
 
-#SBATCH --job-name=rolling_flipped
+#SBATCH --job-name=rolling2.2
 
 ## Allocation Definition
 
@@ -19,7 +19,7 @@
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=48:00:00
+#SBATCH --time=2-48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
@@ -33,7 +33,7 @@
 
 ## Specify the working directory for this job
 
-#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/rolling_flipped
+#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/rolling
 
 ##turn on e-mail notification
 
@@ -50,16 +50,10 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate guro
 export OPENBLAS_NUM_THREADS=1
 
-cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/rolling_flipped
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/rolling
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-# python generate_grid.py
-python rolling_flipped.py
 
-echo scimaf_dir > maf.sh
-echo glance_dir >> maf.sh
-echo ddf_dir >> maf.sh
-
-#cat maf.sh | parallel -j 20
+cat rolling.sh | parallel -j 28
