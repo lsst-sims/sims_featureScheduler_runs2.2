@@ -156,7 +156,7 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
     template_weight : float (12.)
         The weight to place on getting image templates every season
     u_template_weight : float (24.)
-        THe weight to place on getting image templates in u-band. Since there
+        The weight to place on getting image templates in u-band. Since there
         are so few u-visits, it can be helpful to turn this up a little higher than
         the standard template_weight kwarg.
     u_nexp1 : bool (True)
