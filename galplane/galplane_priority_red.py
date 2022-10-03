@@ -250,11 +250,19 @@ def generate_blobs(
         The weight on basis function that tries to stay avoid filter changes.
     template_weight : float (12.)
         The weight to place on getting image templates every season
+    u_template_weight : float (24.)
+        The weight to place on getting image templates in u-band. Since there
+        are so few u-visits, it can be helpful to turn this up a little higher than
+        the standard template_weight kwarg.
     u_nexp1 : bool (True)
         Add a detailer to make sure the number of expossures in a visit is always 1 for u observations.
     scheduled_respect : float (45)
         How much time to require there be before a pre-scheduled observation (minutes)
     """
+
+    template_weights = {'u': u_template_weight, 'g': template_weight,
+                        'r': template_weight, 'i': template_weight,
+                        'z': template_weight, 'y': template_weight}
 
     blob_survey_params = {
         "slew_approx": 7.5,
@@ -595,6 +603,10 @@ def generate_twi_blobs(
         The weight on basis function that tries to stay avoid filter changes.
     template_weight : float (12.)
         The weight to place on getting image templates every season
+    u_template_weight : float (24.)
+        The weight to place on getting image templates in u-band. Since there
+        are so few u-visits, it can be helpful to turn this up a little higher than
+        the standard template_weight kwarg.
     """
 
     blob_survey_params = {

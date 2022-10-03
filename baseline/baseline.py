@@ -169,6 +169,10 @@ def generate_blobs(nside, nexp=2, exptime=30., filter1s=['u', 'u', 'g', 'r', 'i'
                         'r': template_weight, 'i': template_weight,
                         'z': template_weight, 'y': template_weight}
 
+    template_weights = {'u': u_template_weight, 'g': template_weight,
+                        'r': template_weight, 'i': template_weight,
+                        'z': template_weight, 'y': template_weight}
+
     blob_survey_params = {'slew_approx': 7.5, 'filter_change_approx': 140.,
                           'read_approx': 2., 'min_pair_time': 15., 'search_radius': 30.,
                           'alt_max': 85., 'az_range': 90., 'flush_time': 30.,
@@ -335,6 +339,10 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
         The weight on basis function that tries to stay avoid filter changes.
     template_weight : float (12.)
         The weight to place on getting image templates every season
+    u_template_weight : float (24.)
+        The weight to place on getting image templates in u-band. Since there
+        are so few u-visits, it can be helpful to turn this up a little higher than
+        the standard template_weight kwarg.
     """
 
     blob_survey_params = {'slew_approx': 7.5, 'filter_change_approx': 140.,

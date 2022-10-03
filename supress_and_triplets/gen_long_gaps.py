@@ -28,7 +28,7 @@ def blob_for_long(nside, nexp=2, exptime=30., filter1s=['g'],
                   season=300., season_start_hour=-4., season_end_hour=2.,
                   shadow_minutes=60., max_alt=76., moon_distance=30., ignore_obs='DD',
                   m5_weight=6., footprint_weight=1.5, slewtime_weight=3.,
-                  stayfilter_weight=3., template_weight=12., footprints=None, u_nexp1=True,
+                  stayfilter_weight=3., template_weight=12., u_template_weight=24., footprints=None, u_nexp1=True,
                   night_pattern=[True, True], time_after_twi=30., HA_min=12, HA_max=24-3.5,
                   nights_delayed=-1):
     """
@@ -76,6 +76,10 @@ def blob_for_long(nside, nexp=2, exptime=30., filter1s=['g'],
         The weight on basis function that tries to stay avoid filter changes.
     template_weight : float (12.)
         The weight to place on getting image templates every season
+    u_template_weight : float (24.)
+        The weight to place on getting image templates in u-band. Since there
+        are so few u-visits, it can be helpful to turn this up a little higher than
+        the standard template_weight kwarg.
     u_nexp1 : bool (True)
         Add a detailer to make sure the number of expossures in a visit is always 1 for u observations.
     """
