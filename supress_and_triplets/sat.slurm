@@ -33,7 +33,7 @@
 
 ## Specify the working directory for this job
 
-#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/technical/supress_and_triplets
+#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/supress_and_triplets
 
 ##turn on e-mail notification
 
@@ -50,7 +50,7 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate guro
 export OPENBLAS_NUM_THREADS=1
 
-cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/technical/supress_and_triplets
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/supress_and_triplets
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
