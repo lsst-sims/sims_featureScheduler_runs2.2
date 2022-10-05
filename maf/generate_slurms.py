@@ -6,6 +6,6 @@ if __name__ == '__main__':
     filelist.sort()
 
     for filename in filelist:
-        slurm_name = 'run_%s.slurm'
+        slurm_name = 'run_%s.slurm' % filename
         os.system('cp maf_ss_template.slurm %s' % slurm_name)
-        os.system("sed -i 's/XXX/%s/g' " % filename)
+        os.system("sed -i 's/XXX/%s/g' %s" % (filename, slurm_name))
