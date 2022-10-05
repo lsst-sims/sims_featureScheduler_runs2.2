@@ -2,7 +2,7 @@
 
 ## Job Name
 
-#SBATCH --job-name=maf2.2
+#SBATCH --job-name=XXX2.2
 
 ## Allocation Definition
 
@@ -14,12 +14,12 @@
 
 ## Nodes
 
-#SBATCH --nodes=6
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=4-48:00:00
+#SBATCH --time=1-48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
@@ -52,18 +52,8 @@ export OPENBLAS_NUM_THREADS=1
 
 cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf
 
-# sym-link in all the relevant dbs
-find ../ -type f \( -iname "*10yrs.db" ! -path "*technical*" \) | xargs -I'{}' ln -s '{}' .
-
-
-rm maf_ss.sh
-# run the solar system etc
-generate_ss
-cat ss_script.sh >> maf_ss.sh
-generate_ss --pop vatiras_granvik_10k
-cat ss_script.sh >> maf_ss.sh
-
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat maf_ss.sh | parallel -j 168
+cat XXX | parallel -j 28
+
