@@ -14,7 +14,7 @@
 
 ## Nodes
 
-#SBATCH --nodes=4
+#SBATCH --nodes=5
 #SBATCH --ntasks-per-node=20
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
@@ -65,4 +65,4 @@ ls *10yrs.db | xargs -I'{}' echo "ddf_dir --db '{}'" >> maf.sh
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat maf.sh | parallel -j 80
+cat maf.sh | parallel -j 100
