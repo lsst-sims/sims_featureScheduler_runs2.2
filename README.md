@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/488745027.svg)](https://zenodo.org/badge/latestdoi/488745027)
+
+
 # sims_featureScheduler_runs2.2
 Even more survey strategy simulations
 
