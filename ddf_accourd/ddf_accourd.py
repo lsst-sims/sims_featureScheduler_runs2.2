@@ -523,7 +523,7 @@ if __name__ == "__main__":
         fileroot = os.path.basename(sys.argv[0]).replace('.py', '') + '_'
     else:
         fileroot = dbroot + '_'
-    file_end = 'sf%.2f_lsf%.1f_lsr%.1f_v2.1_' % (ddf_season_frac, ddf_low_season_frac, ddf_low_season_rate)
+    file_end = 'sf%.2f_lsf%.1f_lsr%.1f_v2.2_' % (ddf_season_frac, ddf_low_season_frac, ddf_low_season_rate)
 
     sm = Sky_area_generator(nside=nside)
 
