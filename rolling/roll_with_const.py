@@ -74,7 +74,13 @@ def make_rolling_footprints(
                 [up, down, 1, up, down, up, down, up, down],
                 ]
     
-    all_slopes = [start + np.roll(rollings[roll_indx], i).tolist() + end for i in range(nslice)]
+    temp_all_slopes = [start + np.roll(rollings[roll_indx], i).tolist() + end for i in range(nslice)]
+    all_slopes_1 = []
+    all_slopes_2 = []
+    for i in range(len(temp_all_slopes[0])):
+        all_slopes_1.append(temp_all_slopes[0][i])
+        all_slopes_2.append(2.0 - temp_all_slopes[0][i])      
+    all_slopes = [all_slopes_1, all_slopes_2]
 
     fp_non_wfd = Footprint(mjd_start, sun_RA_start=sun_RA_start)
     rolling_footprints = []
