@@ -14,12 +14,12 @@
 
 ## Nodes
 
-#SBATCH --nodes=6
-#SBATCH --ntasks-per-node=15
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=10
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=2-48:00:00
+#SBATCH --time=48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
@@ -58,11 +58,11 @@ find ../ -type f \( -iname "*10yrs.db" ! -path "*technical*" \) | xargs -I'{}' l
 
 rm maf.sh
 ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" >> maf.sh
-ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" >> maf.sh
-ls *10yrs.db | xargs -I'{}' echo "ddf_dir --db '{}'" >> maf.sh
-ls *10yrs.db | xargs -I'{}' echo "metadata_dir --db '{}'" >> maf.sh
+#ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" >> maf.sh
+#ls *10yrs.db | xargs -I'{}' echo "ddf_dir --db '{}'" >> maf.sh
+#ls *10yrs.db | xargs -I'{}' echo "metadata_dir --db '{}'" >> maf.sh
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat maf.sh | parallel -j 90
+cat maf.sh | parallel -j 10

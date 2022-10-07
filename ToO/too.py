@@ -78,7 +78,8 @@ class ToO_scripted_survey(Scripted_survey, BaseMarkovDF_survey):
                  exptime=30., camera='LSST',
                  survey_name='ToO', flushtime=2., mjd_tol=1./24., dist_tol=0.5,
                  alt_min=20., alt_max=85., HA_min=5, HA_max=19, ignore_obs='dummy', dither=True,
-                 seed=42, npositions=7305, n_snaps=2, n_usnaps=1, id_start=1):
+                 seed=42, npositions=7305, n_snaps=2, n_usnaps=1, id_start=1,
+                 detailers=None):
         # Figure out what else I need to super here
 
         self.basis_functions = basis_functions
@@ -107,6 +108,7 @@ class ToO_scripted_survey(Scripted_survey, BaseMarkovDF_survey):
         self.detailers = []
         self.dither = dither
         self.id_start = id_start
+        self.detailers = detailers
 
         self.camera = camera
         # Load the OpSim field tesselation and map healpix to fields
@@ -863,12 +865,18 @@ if __name__ == "__main__":
     filters_at_times = [too_filters]*4 + ['gz']
     nvis = [1, 1, 1, 1, 6]
 
+    camera_rot_limits = [-80., 80.]
+    detailer_list = []
+    detailer_list.append(detailers.Camera_rot_detailer(min_rot=np.min(camera_rot_limits),
+                                                       max_rot=np.max(camera_rot_limits)))
+    detailer_list.append(detailers.Rottep2Rotsp_desired_detailer())
     toos = [ToO_scripted_survey([], nside=nside, followup_footprint=too_footprint,
                                 times=times[0:too_nfollow],
                                 filters_at_times=filters_at_times[0:too_nfollow],
-                                nvis=nvis[0:too_nfollow])]
+                                nvis=nvis[0:too_nfollow], detailers=detailer_list)]
 
-    blobs = generate_blobs(nside, nexp=nexp, footprints=footprints, mjd_start=conditions.mjd_start, good_seeing_weight=gsw)
+    blobs = generate_blobs(nside, nexp=nexp, footprints=footprints, mjd_start=conditions.mjd_start,
+                           good_seeing_weight=gsw)
     twi_blobs = generate_twi_blobs(nside, nexp=nexp,
                                    footprints=footprints,
                                    wfd_footprint=wfd_footprint,
