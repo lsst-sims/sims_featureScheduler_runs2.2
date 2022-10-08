@@ -15,7 +15,7 @@
 ## Nodes
 
 #SBATCH --nodes=7
-#SBATCH --ntasks-per-node=10
+#SBATCH --ntasks-per-node=11
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
@@ -65,4 +65,4 @@ ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" >> maf.sh
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat maf.sh | parallel -j 70
+cat maf.sh | parallel -j 77
