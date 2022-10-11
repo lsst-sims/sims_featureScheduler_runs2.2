@@ -146,7 +146,7 @@ def generate_ddf_scheduled_obs(data_file='ddf_grid.npz', flush_length=2, mjd_tol
                                dist_tol=3., season_frac=0.1,
                                low_season_frac=0.4, low_season_rate=0.3,
                                nvis_master=[8, 2, 5, 5, 6, 5], filters='ugrizy',
-                               nsnaps=[1, 2, 2, 2, 2, 2], sequence_limit=258):
+                               nsnaps=[1, 2, 2, 2, 2, 2], sequence_limit=258*4):
 
     flush_length = flush_length  # days
     mjd_tol = mjd_tol/60/24.  # minutes to days
