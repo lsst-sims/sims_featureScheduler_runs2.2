@@ -1,45 +1,45 @@
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 23.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 23.
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 22.5
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 22
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 21
-source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 23.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 23.
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 22.5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 22
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0    --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.05 --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.1  --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.15 --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.2  --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.25 --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.3  --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.35 --g_depth 21
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths  ; source setup.sh ; python ddf_sl.py --ddf_season_frac 0.4  --g_depth 21
