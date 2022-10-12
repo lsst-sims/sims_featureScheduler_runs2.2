@@ -437,8 +437,8 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
     return surveys
 
 
-def ddf_surveys(detailers=None, season_frac=0.2, euclid_detailers=None):
-    obs_array = generate_ddf_scheduled_obs(season_frac=season_frac)
+def ddf_surveys(detailers=None, season_frac=0.2, euclid_detailers=None, g_depth_limit=23.5):
+    obs_array = generate_ddf_scheduled_obs(season_frac=season_frac, g_depth_limit=g_depth_limit)
 
     euclid_obs = np.where((obs_array['note'] == 'DD:EDFS_b') | (obs_array['note'] == 'DD:EDFS_a'))[0]
     all_other = np.where((obs_array['note'] != 'DD:EDFS_b') & (obs_array['note'] != 'DD:EDFS_a'))[0]
@@ -482,6 +482,7 @@ if __name__ == "__main__":
     parser.add_argument("--dbroot", type=str)
     parser.add_argument("--gsw", type=float, default=3.0)
     parser.add_argument("--ddf_season_frac", type=float, default=0.2)
+    parser.add_argument("--g_depth", type=float, default=23.5)
 
     args = parser.parse_args()
     survey_length = args.survey_length  # Days
@@ -494,6 +495,7 @@ if __name__ == "__main__":
     scale = args.rolling_strength
     dbroot = args.dbroot
     gsw = args.gsw
+    g_depth_limit = args.g_depth
 
     ddf_season_frac = args.ddf_season_frac
 
@@ -519,7 +521,7 @@ if __name__ == "__main__":
         fileroot = os.path.basename(sys.argv[0]).replace('.py', '') + '_'
     else:
         fileroot = dbroot + '_'
-    file_end = '%.1f_v2.2_' % ddf_season_frac
+    file_end = '%.1f_g%.1f_v2.2_' % (ddf_season_frac, g_depth_limit)
 
     sm = Sky_area_generator(nside=nside)
 
@@ -548,7 +550,8 @@ if __name__ == "__main__":
                dither_detailer, u_detailer, detailers.Rottep2Rotsp_desired_detailer()]
     euclid_detailers = [detailers.Camera_rot_detailer(min_rot=-camera_ddf_rot_limit, max_rot=camera_ddf_rot_limit),
                         detailers.Euclid_dither_detailer(), u_detailer, detailers.Rottep2Rotsp_desired_detailer()]
-    ddfs = ddf_surveys(detailers=details, season_frac=ddf_season_frac, euclid_detailers=euclid_detailers)
+    ddfs = ddf_surveys(detailers=details, season_frac=ddf_season_frac,
+                       euclid_detailers=euclid_detailers, g_depth_limit=g_depth_limit)
 
     greedy = gen_greedy_surveys(nside, nexp=nexp, footprints=footprints)
 

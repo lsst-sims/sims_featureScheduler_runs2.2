@@ -1,9 +1,45 @@
-python ddf_sl.py --ddf_season_frac 0
-python ddf_sl.py --ddf_season_frac 0.05
-python ddf_sl.py --ddf_season_frac 0.1
-python ddf_sl.py --ddf_season_frac 0.15
-python ddf_sl.py --ddf_season_frac 0.2
-python ddf_sl.py --ddf_season_frac 0.25
-python ddf_sl.py --ddf_season_frac 0.3
-python ddf_sl.py --ddf_season_frac 0.35
-python ddf_sl.py --ddf_season_frac 0.4
+python ddf_sl.py --ddf_season_frac 0    --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.05 --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.1  --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.15 --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.2  --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.25 --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.3  --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.35 --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0.4  --g_depth 23.5
+python ddf_sl.py --ddf_season_frac 0    --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.05 --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.1  --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.15 --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.2  --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.25 --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.3  --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.35 --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0.4  --g_depth 23.
+python ddf_sl.py --ddf_season_frac 0    --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.05 --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.1  --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.15 --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.2  --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.25 --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.3  --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.35 --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0.4  --g_depth 22.5
+python ddf_sl.py --ddf_season_frac 0    --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.05 --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.1  --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.15 --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.2  --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.25 --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.3  --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.35 --g_depth 22
+python ddf_sl.py --ddf_season_frac 0.4  --g_depth 22
+python ddf_sl.py --ddf_season_frac 0    --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.05 --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.1  --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.15 --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.2  --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.25 --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.3  --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.35 --g_depth 21
+python ddf_sl.py --ddf_season_frac 0.4  --g_depth 21
