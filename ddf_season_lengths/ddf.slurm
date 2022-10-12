@@ -55,4 +55,7 @@ cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_season_lengths
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat ddf.sh | parallel -j 56
+scontrol show hostnames > list_of_nodes
+cpu_count=28
+
+cat ddf.sh | parallel --sshloginfile list_of_nodes -j $cpu_count
