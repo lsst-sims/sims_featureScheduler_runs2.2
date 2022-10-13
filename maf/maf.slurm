@@ -15,7 +15,7 @@
 ## Nodes
 
 #SBATCH --nodes=7
-#SBATCH --ntasks-per-node=12
+#SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
@@ -57,12 +57,14 @@ find ../ -type f \( -iname "*10yrs.db" ! -path "*technical*" \) | xargs -I'{}' l
 
 
 rm maf.sh
-ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" >> maf.sh
-#ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" >> maf.sh
-#ls *10yrs.db | xargs -I'{}' echo "ddf_dir --db '{}'" >> maf.sh
-#ls *10yrs.db | xargs -I'{}' echo "metadata_dir --db '{}'" >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; scimaf_dir --db '{}'" >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; glance_dir --db '{}'" >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; ddf_dir --db '{}'" >> maf.sh
+ls *10yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; metadata_dir --db '{}'" >> maf.sh
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
+scontrol show hostnames > list_of_nodes
+cpu_count=28
 
-cat maf.sh | parallel -j 84
+cat maf.sh | parallel --sshloginfile list_of_nodes -j $cpu_count
