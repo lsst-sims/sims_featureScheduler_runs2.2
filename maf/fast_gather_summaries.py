@@ -64,6 +64,6 @@ def fast_gather(dirname='.', dbfilename='resultsDb_sqlite.db'):
 if __name__ == '__main__':
 
     result = fast_gather()
-    result.to_hdf('summary.h5')
+    result.to_hdf('summary.h5', key="stats")
 
 
