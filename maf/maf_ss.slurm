@@ -65,5 +65,12 @@ cat ss_script.sh >> maf_ss.sh
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
+scontrol show hostnames > list_of_nodes
+cpu_count=28
 
-cat maf_ss.sh | parallel -j 168
+preamble = 'cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; '
+
+cat maf_ss.sh | xargs -I'{}' echo $preamble '{}' > maf_ss_final.sh
+
+
+cat maf_ss_final.sh | parallel --sshloginfile list_of_nodes -j $cpu_count
