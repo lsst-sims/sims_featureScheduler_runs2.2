@@ -2,7 +2,7 @@
 
 ## Job Name
 
-#SBATCH --job-name=maf2.2
+#SBATCH --job-name=rerun2.2
 
 ## Allocation Definition
 
@@ -14,12 +14,12 @@
 
 ## Nodes
 
-#SBATCH --nodes=7
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
-#SBATCH --time=6-12:00:00
+#SBATCH --time=2-48:00:00
 
 ## Memory per node. It is important to specify the memory since the default memory is very small.
 
