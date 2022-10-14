@@ -68,7 +68,7 @@ module load parallel-20170722
 scontrol show hostnames > list_of_nodes
 cpu_count=28
 
-preamble = 'cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; '
+preamble='cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; '
 
 cat maf_ss.sh | xargs -I'{}' echo $preamble '{}' > maf_ss_final.sh
 
