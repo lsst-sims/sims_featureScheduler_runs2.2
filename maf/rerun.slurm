@@ -52,4 +52,4 @@ export OPENBLAS_NUM_THREADS=1
 
 cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf
 
-ddf_dir --db 'ddf_deep_rolling_slf0.20_v2.2_10yrs.db
+ddf_dir --db ddf_deep_rolling_slf0.20_v2.2_10yrs.db
