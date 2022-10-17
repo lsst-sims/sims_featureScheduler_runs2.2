@@ -57,4 +57,8 @@ module load parallel-20170722
 
 # python generate_grid.py
 
-cat too.sh | parallel -j 48
+
+scontrol show hostnames > list_of_nodes
+cpu_count=28
+
+cat too.sh | parallel --sshloginfile list_of_nodes -j $cpu_count

@@ -1,48 +1,48 @@
-python too.py --too_rate 8  --filters gz --nfollow 1
-python too.py --too_rate 8  --filters gz --nfollow 4
-python too.py --too_rate 8  --filters gz --nfollow 5
-python too.py --too_rate 8  --filters gzi --nfollow 1
-python too.py --too_rate 8  --filters gzi --nfollow 4
-python too.py --too_rate 8  --filters gzi --nfollow 5
-python too.py --too_rate 8  --filters gzir --nfollow 1
-python too.py --too_rate 8  --filters gzir --nfollow 4
-python too.py --too_rate 8  --filters gzir --nfollow 5
-python too.py --too_rate 8  --filters ugziry --nfollow 1
-python too.py --too_rate 8  --filters ugziry --nfollow 4
-python too.py --too_rate 8  --filters ugziry --nfollow 5
-python too.py --too_rate 16  --filters gz --nfollow 1
-python too.py --too_rate 16  --filters gz --nfollow 4
-python too.py --too_rate 16  --filters gz --nfollow 5
-python too.py --too_rate 16  --filters gzi --nfollow 1
-python too.py --too_rate 16  --filters gzi --nfollow 4
-python too.py --too_rate 16  --filters gzi --nfollow 5
-python too.py --too_rate 16  --filters gzir --nfollow 1
-python too.py --too_rate 16  --filters gzir --nfollow 4
-python too.py --too_rate 16  --filters gzir --nfollow 5
-python too.py --too_rate 16  --filters ugziry --nfollow 1
-python too.py --too_rate 16  --filters ugziry --nfollow 4
-python too.py --too_rate 16  --filters ugziry --nfollow 5
-python too.py --too_rate 32  --filters gz --nfollow 1
-python too.py --too_rate 32  --filters gz --nfollow 4
-python too.py --too_rate 32  --filters gz --nfollow 5
-python too.py --too_rate 32  --filters gzi --nfollow 1
-python too.py --too_rate 32  --filters gzi --nfollow 4
-python too.py --too_rate 32  --filters gzi --nfollow 5
-python too.py --too_rate 32  --filters gzir --nfollow 1
-python too.py --too_rate 32  --filters gzir --nfollow 4
-python too.py --too_rate 32  --filters gzir --nfollow 5
-python too.py --too_rate 32  --filters ugziry --nfollow 1
-python too.py --too_rate 32  --filters ugziry --nfollow 4
-python too.py --too_rate 32  --filters ugziry --nfollow 5
-python too.py --too_rate 64  --filters gz --nfollow 1
-python too.py --too_rate 64  --filters gz --nfollow 4
-python too.py --too_rate 64  --filters gz --nfollow 5
-python too.py --too_rate 64  --filters gzi --nfollow 1
-python too.py --too_rate 64  --filters gzi --nfollow 4
-python too.py --too_rate 64  --filters gzi --nfollow 5
-python too.py --too_rate 64  --filters gzir --nfollow 1
-python too.py --too_rate 64  --filters gzir --nfollow 4
-python too.py --too_rate 64  --filters gzir --nfollow 5
-python too.py --too_rate 64  --filters ugziry --nfollow 1
-python too.py --too_rate 64  --filters ugziry --nfollow 4
-python too.py --too_rate 64  --filters ugziry --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gz --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gz --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gz --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gzi --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gzi --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gzi --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gzir --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gzir --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters gzir --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters ugziry --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters ugziry --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 8  --filters ugziry --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gz --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gz --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gz --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gzi --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gzi --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gzi --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gzir --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gzir --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters gzir --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters ugziry --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters ugziry --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 16  --filters ugziry --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gz --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gz --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gz --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gzi --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gzi --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gzi --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gzir --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gzir --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters gzir --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters ugziry --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters ugziry --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 32  --filters ugziry --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gz --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gz --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gz --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gzi --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gzi --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gzi --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gzir --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gzir --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters gzir --nfollow 5
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters ugziry --nfollow 1
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters ugziry --nfollow 4
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ToO ; source setup.sh ; python too.py --too_rate 64  --filters ugziry --nfollow 5
