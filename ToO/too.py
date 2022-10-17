@@ -73,7 +73,7 @@ class ToO_scripted_survey(Scripted_survey, BaseMarkovDF_survey):
 
     """
     def __init__(self, basis_functions, followup_footprint=None, nside=32, reward_val=1e6, times=[0, 1, 2, 4, 24],
-                 filters_at_times=['gz', 'gz', 'gz', 'gz', 'gz'], 
+                 filters_at_times=['gz', 'gz', 'gz', 'gz', 'gy'], 
                  nvis=[1, 1, 1, 1, 6],
                  exptime=30., camera='LSST',
                  survey_name='ToO', flushtime=2., mjd_tol=1./24., dist_tol=0.5,
@@ -862,7 +862,7 @@ if __name__ == "__main__":
 
     # Set up the damn ToO kwargs
     times = [0, 1, 2, 4, 24]
-    filters_at_times = [too_filters]*4 + ['gz']
+    filters_at_times = [too_filters]*4 + ['gy']
     nvis = [1, 1, 1, 1, 6]
 
     camera_rot_limits = [-80., 80.]
