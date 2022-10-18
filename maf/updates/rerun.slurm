@@ -55,10 +55,10 @@ cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf/updates
 # sym-link in all the relevant dbs
 
 rm maf.sh
-ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; scimaf_dir --db '{}'" >> maf.sh
-ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; glance_dir --db '{}'" >> maf.sh
-ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; ddf_dir --db '{}'" >> maf.sh
-ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf  ; source setup.sh ; metadata_dir --db '{}'" >> maf.sh
+ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf/updates  ; source setup.sh ; scimaf_dir --db '{}'" >> maf.sh
+ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf/updates  ; source setup.sh ; glance_dir --db '{}'" >> maf.sh
+ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf/updates  ; source setup.sh ; ddf_dir --db '{}'" >> maf.sh
+ls *yrs.db | xargs -I'{}' echo "cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf/updates  ; source setup.sh ; metadata_dir --db '{}'" >> maf.sh
 
 ## run all the baseline commands in parallel
 module load parallel-20170722
