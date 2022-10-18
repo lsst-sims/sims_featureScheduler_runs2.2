@@ -1,4 +1,4 @@
-from rubin_sim import schema_converter
+from rubin_sim.sceduler.utils import schema_converter
 import glob
 import numpy as np
 
