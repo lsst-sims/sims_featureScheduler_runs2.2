@@ -33,7 +33,7 @@
 
 ## Specify the working directory for this job
 
-#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf
+#SBATCH --chdir=/gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf/updates
 
 ##turn on e-mail notification
 
@@ -50,7 +50,7 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate guro
 export OPENBLAS_NUM_THREADS=1
 
-cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/maf/updates
 
 
 
