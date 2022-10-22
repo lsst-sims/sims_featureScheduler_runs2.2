@@ -437,9 +437,11 @@ def generate_twi_blobs(nside, nexp=2, exptime=30., filter1s=['r', 'i', 'z', 'y']
     return surveys
 
 
-def ddf_surveys(detailers=None, season_frac=0.2, euclid_detailers=None):
-    obs_array = generate_ddf_scheduled_obs(season_frac=season_frac)
+def ddf_surveys(detailers=None, ddf_file='ddf_1.npz', season_frac=0.1,
+                low_season_frac=0.4, low_season_rate=0.3, euclid_detailers=None):
 
+    obs_array = generate_ddf_scheduled_obs(season_frac=season_frac, low_season_frac=low_season_frac,
+                                           low_season_rate=low_season_rate)
     euclid_obs = np.where((obs_array['note'] == 'DD:EDFS_b') | (obs_array['note'] == 'DD:EDFS_a'))[0]
     all_other = np.where((obs_array['note'] != 'DD:EDFS_b') & (obs_array['note'] != 'DD:EDFS_a'))[0]
 
@@ -552,7 +554,8 @@ if __name__ == "__main__":
                dither_detailer, u_detailer, detailers.Rottep2Rotsp_desired_detailer()]
     euclid_detailers = [detailers.Camera_rot_detailer(min_rot=-camera_ddf_rot_limit, max_rot=camera_ddf_rot_limit),
                         detailers.Euclid_dither_detailer(), u_detailer, detailers.Rottep2Rotsp_desired_detailer()]
-    ddfs = ddf_surveys(detailers=details, season_frac=ddf_season_frac, euclid_detailers=euclid_detailers)
+    ddfs = ddf_surveys(detailers=details, season_frac=ddf_season_frac, low_season_frac=ddf_low_season_frac,
+                       low_season_rate=ddf_low_season_rate, euclid_detailers=euclid_detailers)
 
     greedy = gen_greedy_surveys(nside, nexp=nexp, footprints=footprints)
 
