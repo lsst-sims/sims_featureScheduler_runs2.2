@@ -14,7 +14,7 @@
 
 ## Nodes
 
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
@@ -55,4 +55,7 @@ cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat ddf_ac.sh | parallel -j 28
+scontrol show hostnames > list_of_nodes
+cpu_count=28
+
+cat ddf_ac.sh | parallel --sshloginfile list_of_nodes -j $cpu_count

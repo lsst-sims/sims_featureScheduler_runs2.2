@@ -1,39 +1,39 @@
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
-python ddf_accourd.py --ddf_season_frac 0.300000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
-python ddf_accourd.py --ddf_season_frac 0.300000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
-python ddf_accourd.py --ddf_season_frac 0.300000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.050000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.200000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.100000 --ddf_low_season_frac 0.150000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.200000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.250000 --ddf_low_season_frac 0.300000 --ddf_low_season_rate 0.500000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.300000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.100000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.300000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.300000
+cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs2.2/ddf_accourd  ; source setup.sh ; python ddf_accourd.py --ddf_season_frac 0.300000 --ddf_low_season_frac 0.400000 --ddf_low_season_rate 0.500000
